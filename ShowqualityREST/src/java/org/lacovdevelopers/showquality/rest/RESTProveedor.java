@@ -59,7 +59,8 @@ public class RESTProveedor extends Application{
             ctrlP.insertProveedor(objP);
             salida = "{\"result\":\"OK\"}";
         }catch(Exception e){
-            salida = "{\"error:\""+e.toString()+"\"}";
+            salida = "{\"result\":\"error\"}";
+            
         }
         return Response.status(Response.Status.OK).entity(salida).build();
     
@@ -80,8 +81,9 @@ public class RESTProveedor extends Application{
             salida = json.toJson(proveedor);
         }catch(Exception e){
             e.printStackTrace();
-            salida = "{\"error:\""+e.toString()+"\"}";
+            salida = "{\"result\":\"error\"}";
         }
+        System.out.println("SALIDA -> "+salida);
         return Response.status(Response.Status.OK).entity(salida).build();
     }
     
@@ -114,7 +116,7 @@ public class RESTProveedor extends Application{
             ctrlP.updateProveedor(objP);
             salida = "{\"result\":\"OK\"}";
         }catch(Exception e){
-            salida = "{\"error:\""+e.toString()+"\"}";
+            salida = "{\"result\":\"error\"}";
         }
         return Response.status(Response.Status.OK).entity(salida).build();
     
@@ -136,7 +138,7 @@ public class RESTProveedor extends Application{
             ctrlP.deleteProveedor(objP);
             salida = "{\"result\":\"OK\"}";
         }catch(Exception e){
-            salida = "{\"error:\""+e.toString()+"\"}";
+           salida = "{\"result\":\"error\"}";
         }
         return Response.status(Response.Status.OK).entity(salida).build();
     
