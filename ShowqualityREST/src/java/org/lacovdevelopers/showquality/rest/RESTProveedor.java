@@ -59,6 +59,7 @@ public class RESTProveedor extends Application{
             ctrlP.insertProveedor(objP);
             salida = "{\"result\":\"OK\"}";
         }catch(Exception e){
+            e.printStackTrace();
             salida = "{\"result\":\"error\"}";
             
         }
@@ -117,6 +118,7 @@ public class RESTProveedor extends Application{
             salida = "{\"result\":\"OK\"}";
         }catch(Exception e){
             salida = "{\"result\":\"error\"}";
+            e.printStackTrace();
         }
         return Response.status(Response.Status.OK).entity(salida).build();
     
@@ -138,6 +140,7 @@ public class RESTProveedor extends Application{
             ctrlP.deleteProveedor(objP);
             salida = "{\"result\":\"OK\"}";
         }catch(Exception e){
+            e.printStackTrace();
            salida = "{\"result\":\"error\"}";
         }
         return Response.status(Response.Status.OK).entity(salida).build();

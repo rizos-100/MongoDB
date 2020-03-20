@@ -6,6 +6,20 @@
 var proveedores;
 var proveedorActual;
 
+function getModuloProveedores() {
+    $.ajax(
+            {
+                type: 'GET',
+                async: true,
+                url: 'style/view/proveedor.html'
+            }
+    ).done(function(data)
+            {
+                
+                $('#divModulos').html(data);
+                getAllProveedores();
+            });
+}
 
 function getAllProveedores() {
     $.ajax(
@@ -37,6 +51,7 @@ function getAllProveedores() {
                     $('#tblProveedor').html(str);
                     buildTableData();
             });
+            
 }
 
 function insertProveedores() {
@@ -87,7 +102,7 @@ function insertProveedores() {
                                     timer : 1500
                                 });
 
-                          getAllProveedores();
+                          getModuloProveedores();
                      }
 
                 });
@@ -134,7 +149,9 @@ function updateProveedor(){
 
 
                      }else{
-
+                         
+                         
+                         
                           Swal.fire({
                                     type: 'success',
                                     title: 'Movimiento realizado',
@@ -142,9 +159,10 @@ function updateProveedor(){
                                     showConfirmButton: false,
                                     timer : 1500
                                 });
-
-                          getAllProveedores();
+                          window.setTimeout('getModuloProveedores()',1000);
+                          
                      }
+                     
 
                 });
 }
@@ -186,8 +204,7 @@ function deleteProveedor(){
                                     showConfirmButton: false,
                                     timer : 1500
                                 });
-
-                          getAllProveedores();
+                          window.setTimeout('getModuloProveedores()',1000);
                      }
 
                 });
@@ -326,4 +343,3 @@ function clearFields(){
         
         
 }
-

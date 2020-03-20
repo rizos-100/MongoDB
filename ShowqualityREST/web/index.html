@@ -14,13 +14,14 @@
         <script type="text/javascript" src="style/MDB-Pro_4.8.8/js/icons.js"></script>
         <script type="text/javascript" src="style/MDB-Pro_4.8.8/js/sweetalert2.js"></script>
         
+        <script type="text/javascript" src="style/MDB-Pro_4.8.8/js/jquery-3.4.1.js"></script>
         <script type="text/javascript" src="style/controller/ControlladorProveedor.js"></script>
     </head>
        
-    <body class="fixed-sn cyan-skin" onload="getAllProveedores()">
+    <body class="fixed-sn cyan-skin">
 
         <!--Main Navigation-->
-        <header>
+       <header>
 
          <!-- Sidebar navigation -->
          <div id="slide-out" class="side-nav sn-bg-2 fixed">
@@ -39,7 +40,7 @@
              <li>
                <ul class="collapsible collapsible-accordion">
                 <li class="py-2">
-                     <a class="collapsible-header waves-effect arrow-r">
+                    <a class="collapsible-header waves-effect arrow-r" onclick="getModuloProveedores()">
                          <p class="h6">
                              <i class="fas fa-truck-moving"></i>
                              Proveedor
@@ -115,63 +116,8 @@
        <!--Main Navigation-->
 
        <!-- Main layout -->
-       <main>
-         <div class="container-fluid">
-
-        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header text-center">
-               <h4 class="modal-title w-100 font-weight-bold" id="tituloModal">Agregar proveedor</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-             <div class="modal-body mx-3" id="modalModificacion">
-            
-              </div>
-             <div class="modal-footer d-flex justify-content-center" id="btnAccion">
-                
-              </div>
-            </div>
-          </div>
-        </div>
-             
-             <div class="row justify-content-center">
-                 
-                <div class="col-md-12 text-center">
-                    <a class="btn btn-success btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm" onclick="clearFields()">
-                      <i class="fas fa-plus-square"></i>
-                      Agregar
-                   </a>
-                </div>
-                 <div class="col-md-12" >
-                 <div class="wrapper-editor">
-
-                    <table id="dtBasicExample-1" class="table table-hover table-responsive" cellspacing="0" width="100%">
-                        <thead class="mdb-color darken-3 text-white">
-                        <tr>
-                          <th class="th-sm h6">Contacto</th>
-                          <th class="th-sm h6">Empresa</th>
-                          <th class="th-sm h6">Telefono</th>
-                          <th class="th-sm h6">Dirección</th>
-                          <th class="th-sm h6">Email</th>
-                          <th class="th-sm h6">Pagina Web</th>
-                          <th class="th-sm h6">Detalles</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tblProveedor">
-                      </tbody>
-                    </table>
-
-                  </div>
-                </div>
-              </div>
-
-
-
-         </div>
+       <main id="divModulos">
+        
        </main>
        <!-- Main layout -->
 
@@ -189,7 +135,7 @@
 
        </footer>
       
-      <script type="text/javascript" src="style/MDB-Pro_4.8.8/js/jquery-3.4.1.js"></script>
+      
       <script type="text/javascript" src="style/MDB-Pro_4.8.8/js/mdb.js"></script>
       <script type="text/javascript" src="style/MDB-Pro_4.8.8/js/bootstrap.js"></script>
       <script type="text/javascript" src="style/MDB-Pro_4.8.8/js/addons/datatables.js"></script>
